@@ -1,0 +1,74 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    addressable (2.8.8)
+      public_suffix (>= 2.0.2, < 8.0)
+    bigdecimal (3.3.1)
+    colorize (1.1.0)
+    crack (1.0.1)
+      bigdecimal
+      rexml
+    csv (3.3.5)
+    diff-lcs (1.6.2)
+    dotenv (2.8.1)
+    hashdiff (1.2.1)
+    httparty (0.23.2)
+      csv
+      mini_mime (>= 1.0.0)
+      multi_xml (>= 0.5.2)
+    mini_mime (1.1.5)
+    multi_xml (0.7.2)
+      bigdecimal (~> 3.1)
+    pastel (0.8.0)
+      tty-color (~> 0.5)
+    public_suffix (7.0.0)
+    rexml (3.4.4)
+    rspec (3.13.2)
+      rspec-core (~> 3.13.0)
+      rspec-expectations (~> 3.13.0)
+      rspec-mocks (~> 3.13.0)
+    rspec-core (3.13.6)
+      rspec-support (~> 3.13.0)
+    rspec-expectations (3.13.5)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.13.0)
+    rspec-mocks (3.13.7)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.13.0)
+    rspec-support (3.13.6)
+    tty-color (0.6.0)
+    tty-cursor (0.7.1)
+    tty-prompt (0.23.1)
+      pastel (~> 0.8)
+      tty-reader (~> 0.8)
+    tty-reader (0.9.0)
+      tty-cursor (~> 0.7)
+      tty-screen (~> 0.8)
+      wisper (~> 2.0)
+    tty-screen (0.8.2)
+    tty-spinner (0.9.3)
+      tty-cursor (~> 0.7)
+    webmock (3.26.1)
+      addressable (>= 2.8.0)
+      crack (>= 0.3.2)
+      hashdiff (>= 0.4.0, < 2.0.0)
+    wisper (2.0.1)
+
+PLATFORMS
+  ruby
+  x86_64-linux-gnu
+
+DEPENDENCIES
+  colorize (~> 1.1)
+  dotenv (~> 2.8)
+  httparty (~> 0.21)
+  rspec (~> 3.12)
+  tty-prompt (~> 0.23)
+  tty-spinner (~> 0.9)
+  webmock (~> 3.18)
+
+RUBY VERSION
+   ruby 3.2.3p157
+
+BUNDLED WITH
+   2.7.2
