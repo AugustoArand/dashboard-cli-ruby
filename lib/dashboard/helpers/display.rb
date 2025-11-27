@@ -264,7 +264,28 @@ module Dashboard
       def word_wrap(text, width: TERMINAL_WIDTH - 4)
         return '' unless text
 
-        text.gsub(/<[^>]*>/, '').gsub(/(.{1,#{width}})(\s+|$)/, "  \\1\n")
+        # Remove HTML tags using a simple approach that avoids ReDoS
+        clean_text = remove_html_tags(text)
+        # Word wrap the cleaned text
+        clean_text.scan(/.{1,#{width}}(?:\s|$)|.{1,#{width}}/).map { |line| "  #{line.strip}" }.join("\n")
+      end
+
+      # Safely removes HTML tags from text
+      # @param text [String] text to clean
+      # @return [String] text without HTML tags
+      def remove_html_tags(text)
+        result = +''
+        in_tag = false
+        text.each_char do |char|
+          if char == '<'
+            in_tag = true
+          elsif char == '>'
+            in_tag = false
+          elsif !in_tag
+            result << char
+          end
+        end
+        result
       end
 
       # Aguarda input do usuário
